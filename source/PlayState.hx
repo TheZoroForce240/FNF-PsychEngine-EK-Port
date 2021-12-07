@@ -2437,7 +2437,8 @@ class PlayState extends MusicBeatState
 				strumY += daNote.offsetY;
 				strumAngle += daNote.offsetAngle;
 				strumAlpha *= daNote.multAlpha;
-				var center:Float = strumY + Note.swagWidth / 2;
+				var swagWidth = 160 * Note.noteScales[mania];
+				var center:Float = strumY + swagWidth / 2;
 
 				if(daNote.copyX) {
 					daNote.x = strumX;
@@ -2462,7 +2463,7 @@ class PlayState extends MusicBeatState
 									daNote.y -= 19;
 								}
 							} 
-							daNote.y += (Note.swagWidth / 2) - (60.5 * (roundedSpeed - 1));
+							daNote.y += (swagWidth / 2) - (60.5 * (roundedSpeed - 1));
 							daNote.y += 27.5 * ((SONG.bpm / 100) - 1) * (roundedSpeed - 1);
 
 							if(daNote.mustPress || !daNote.ignoreNote)
